@@ -1,0 +1,68 @@
+# Build directories
+build/
+cmake-build-*/
+
+# Compiled Object files
+*.o
+*.obj
+*.lo
+*.slo
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Testing/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+
+# IDE - Visual Studio Code
+.vscode/
+*.code-workspace
+
+# IDE - Visual Studio
+.vs/
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.sln
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# IDE - CLion
+.idea/
+cmake-build-*/
+
+# IDE - Qt Creator
+*.pro.user
+*.pro.user.*
+
+# OS
+.DS_Store
+Thumbs.db
