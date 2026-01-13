@@ -11,8 +11,13 @@ if(WIN32 AND NOT MSVC)
 endif()
 
 add_executable(swarm_sim
-    src/main.cpp
-    src/formations.cpp
+    src/Main.cpp
+    src/Formations.cpp
+    src/assignment/Assignment.cpp
+    src/Sim.cpp
+    src/Controller.cpp
+    src/Recorder.cpp
+
 )
 
 target_include_directories(swarm_sim PRIVATE src)

@@ -14,15 +14,26 @@ std::vector<Vec3> makeCircle(int N, float radius){
 
 std::vector<Vec3> makeGrid(int N, float spacing) {
     std::vector<Vec3> points;
-    int rows = static_cast<int>(std::sqrt(N));
-    int cols = (N + rows - 1) / rows;  // Ceiling division
-    for (int i = 0; i < N; i++){
-        int row = i / cols;
-        int col = i % cols;
-        points.push_back(Vec3(col * spacing, row * spacing, 0));
+    if (N <= 0) return points;
+
+    int cols = (int)std::ceil(std::sqrt((float)N));
+    int rows = (int)std::ceil((float)N / cols);
+
+    points.reserve(N);
+    for (int i = 0; i < N; ++i) {
+        int r = i / cols;
+        int c = i % cols;
+        points.push_back(Vec3(c * spacing, r * spacing, 0.0f));
     }
+
+    Vec3 centroid(0.0f, 0.0f, 0.0f);
+    for (const auto& p : points) centroid += p;
+    centroid /= (float)points.size();
+    for (auto& p : points) p -= centroid;
+
     return points;
 }
+
 
 std::vector<Vec3> makeVShape(int N, float spacing, float angleDeg) {
     std::vector<Vec3> points;
